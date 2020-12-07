@@ -1,0 +1,25 @@
+{
+    "INICIO": {
+        "ID": "id vuelo",
+        "IDPASAJERO": "id pasajero",
+        "IDVUELO": "id vuelo",
+        "NUMEROVUELO": "número vuelo",
+        "ORIGEN": "origen",
+        "DESTINO": "destino",
+        "HORA": "hora salida",
+        "FECHA": "fecha salida",
+        "DETALLE": "detalle",
+        "NOMBRES": "Nombres",
+        "APELLIDOS": "Apellidos",
+        "GENERO": "Genero",
+        "TIPOIDENTIFICACION": "Tipo Identificacion",
+        "IDENTIFICACION": "Identificacion",
+        "CELULAR": "Celular",
+        "CORREO": "Correo",
+        "GUARDAR": "Guardar",
+        "ELIMINAR": "Eliminar",
+        "EDITAR": "Editar",
+        "ENGLISH": "Inglés",
+        "SPANISH": "Español"
+    }    
+}

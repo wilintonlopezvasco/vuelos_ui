@@ -1,0 +1,42 @@
+<div class="container">
+    <form>
+        <div>
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ "INICIO.IDVUELO" | translate}}</th>
+                        <th scope="col">{{ "INICIO.NOMBRES" | translate}}</th>
+                        <th scope="col">{{ "INICIO.APELLIDOS" | translate}}</th>
+                        <th scope="col">{{ "INICIO.GENERO" | translate}}</th>
+                        <th scope="col">{{ "INICIO.TIPOIDENTIFICACION" | translate}}</th>
+                        <th scope="col">{{ "INICIO.IDENTIFICACION" | translate}}</th>
+                        <th scope="col">{{ "INICIO.CELULAR" | translate}}</th>
+                        <th scope="col">{{ "INICIO.CORREO" | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="idVuelo" [(ngModel)]="pasajero.idVuelo" placeholder="idVuelo"
+                                class="form-control" autofocus></td>
+                        <td><input type="text" name="nombres" [(ngModel)]="pasajero.nombres" placeholder="nombres"
+                                class="form-control" autofocus></td>
+                        <td><input type="text" name="apellidos" [(ngModel)]="pasajero.apellidos" placeholder="apellidos"
+                                class="form-control" autofocus></td>
+                        <td><input type="text" name="genero" [(ngModel)]="pasajero.genero" placeholder="genero"
+                                class="form-control" autofocus></td>
+                        <td><input type="text" name="tipoIdentificacion" [(ngModel)]="pasajero.tipoIdentificacion"
+                                placeholder="tipoIdentificacion" class="form-control" autofocus></td>
+                        <td><input type="text" name="identificacion" [(ngModel)]="pasajero.identificacion"
+                                placeholder="identificacion" class="form-control" autofocus></td>
+                        <td><input type="text" name="celular" [(ngModel)]="pasajero.celular" placeholder="celular"
+                                class="form-control" autofocus></td>
+                        <td><input type="text" name="email" [(ngModel)]="pasajero.email" placeholder="email"
+                                class="form-control" autofocus></td>
+                        <td><button class="btn btn-succes btn-block"
+                                (click)="edit ? updatePasajero() : saveNewPasajero()">Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>

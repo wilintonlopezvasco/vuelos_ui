@@ -1,0 +1,25 @@
+{
+    "INICIO": {
+        "ID": "flight id",
+        "IDPASAJERO": "id passenger",
+        "IDVUELO": "flight id",
+        "NUMEROVUELO": "flight number",
+        "ORIGEN": "origin",
+        "DESTINO": "destination",
+        "HORA": "departure time",
+        "FECHA": "departure date",
+        "DETALLE": "detail",
+        "NOMBRES": "Names",
+        "APELLIDOS": "Surname",
+        "GENERO": "Genre",
+        "TIPOIDENTIFICACION": "Identification Type",
+        "IDENTIFICACION": "Identification",
+        "CELULAR": "Cellular",
+        "CORREO": "Mail",
+        "GUARDAR": "Save",
+        "ELIMINAR": "Delete",
+        "EDITAR": "Edit",
+        "ENGLISH": "Inglés",
+        "SPANISH": "Español"
+    } 
+}

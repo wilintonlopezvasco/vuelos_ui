@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'semillero';
+
+  selectedLanguage = 'es';
+
+  constructor(private translateService: TranslateService) {
+    this.translateService.setDefaultLang(this.selectedLanguage);
+    this.translateService.use(this.selectedLanguage);
+  }
+
+    selectLanguage(lang: string) {
+      this.translateService.use(lang);
+    }
+
 }

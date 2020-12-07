@@ -1,0 +1,29 @@
+<div class="container">
+    <table class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">{{ "INICIO.ID" | translate}}</th>
+          <th scope="col">{{ "INICIO.IDPASAJERO" | translate}}</th>
+          <th scope="col">{{ "INICIO.NUMEROVUELO" | translate}}</th>
+          <th scope="col">{{ "INICIO.ORIGEN" | translate}}</th>
+          <th scope="col">{{ "INICIO.DESTINO" | translate}}</th>
+          <th scope="col">{{ "INICIO.HORA" | translate}}</th>
+          <th scope="col">{{ "INICIO.FECHA" | translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vuelo of vuelos">
+          <td>{{vuelo.id}}</td>
+          <td>{{vuelo.idPasajero}}</td>
+          <td>{{vuelo.numeroVuelo}}</td>
+          <td>{{vuelo.origen}}</td>
+          <td>{{vuelo.destino}}</td>
+          <td>{{vuelo.hora}}</td>
+          <td>{{vuelo.fecha}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-primary" [routerLink]="['/pasajeros']">{{"INICIO.DETALLE" | translate}}</button>
+          </td>     
+        </tr>
+      </tbody>
+    </table>
+  </div>
