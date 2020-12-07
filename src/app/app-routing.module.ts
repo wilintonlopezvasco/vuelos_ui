@@ -17,19 +17,11 @@ const routes: Routes = [
     component: VueloListComponent
   },
   {
-    path: 'vuelos/add',
-    component: VueloFormComponent
-  },
-  {
-    path: 'pasajeros/edit/:id',
-    component: PasajeroFormComponent
-  },
-  {
     path: 'pasajeros',
-    redirectTo: '/pasajeros'
+    component: PasajeroListComponent
   },
   {
-    path: 'pasajeros',
+    path: 'pasajeros/:idVuelo',
     component: PasajeroListComponent
   },
   {

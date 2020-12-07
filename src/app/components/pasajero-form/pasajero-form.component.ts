@@ -10,8 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PasajeroFormComponent implements OnInit {
 
   pasajero: any = {
-
-    id: 0,
     idVuelo: 0,
     nombres: "",
     apellidos: "",
@@ -29,38 +27,50 @@ export class PasajeroFormComponent implements OnInit {
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.params;
     if (params.id) {
-      this.pasajerosService.getPasajero(params.id)
-      .subscribe(
-        res => {
-          console.log(res);
-          this.pasajero = res;
-          this.edit = true;
-        },
-        err => console.error(err)
-      )
+      this.pasajerosService.getPasajeroById(params.id)
+        .subscribe(
+          (res: any) => {
+            console.log(res);
+            this.pasajero = res.data;
+            this.edit = true;
+          },
+          err => console.error(err)
+        )
     }
   }
 
   saveNewPasajero() {
     this.pasajerosService.savePasajero(this.pasajero)
-    .subscribe(
-      res => {
-        console.log(res);
-        this.router.navigate(['/pasajeros']);
-      },
-      err => console.error(err)
-    )
+      .subscribe(
+        res => {
+          console.log(res);
+          this.router.navigate(['/pasajeros']);
+        },
+        err => console.error(err)
+      )
   }
 
   updatePasajero() {
-    this.pasajerosService.updatePasajero(this.pasajero.id, this.pasajero)
+    const params = this.activatedRoute.snapshot.params;
+    this.pasajerosService.updatePasajero(params.id, this.pasajero)
     .subscribe(
       res => {
         console.log(res);
-        this.router.navigate(['/pasajeros']);
       },
-      err => console.error(err)
+      err => console.log(err)
+      
     )
+    
   }
 
+  searchPasajero(identificacion: string) {
+    this.pasajerosService.getPasajero(identificacion)
+      .subscribe(
+        (res: any) => {
+          console.log(res.data)
+          this.router.navigate([`/pasajeros/edit`, res.data.id]);
+        },
+        err => console.error(err)
+      )
+  }
 }

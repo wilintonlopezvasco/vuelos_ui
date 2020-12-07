@@ -18,8 +18,12 @@ export class PasajerosService {
     return this.http.get(`${this.API_URI}/findAll`);
   }
 
-  getPasajero(identificacion: number) {
-    return this.http.get(`${this.API_URI}${identificacion}`);
+  getPasajero(identificacion: string) {
+    return this.http.get(`${this.API_URI}/getByIdentificacion/${identificacion}`);
+  }
+
+  getPasajeroById(id: number) {
+    return this.http.get(`${this.API_URI}/getById/${id}`);
   }
 
   deletePasajero(id: number) {
@@ -30,8 +34,8 @@ export class PasajerosService {
     return this.http.post(`${this.API_URI}/`, pasajero);
   }
 
-  updatePasajero(id, updatePasajero) {
-    return this.http.put(`${this.API_URI}/id/${id}`, updatePasajero);
+  updatePasajero(id, updatedPasajero) {
+    return this.http.put(`${this.API_URI}/id/${id}`, updatedPasajero);
   }
 
   

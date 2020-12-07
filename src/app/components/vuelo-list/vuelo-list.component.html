@@ -21,7 +21,7 @@
           <td>{{vuelo.hora}}</td>
           <td>{{vuelo.fecha}}</td>
           <td>
-            <button type="button" class="btn btn-outline-primary" [routerLink]="['/pasajeros']">{{"INICIO.DETALLE" | translate}}</button>
+            <button type="button" class="btn btn-outline-primary" [routerLink]="['/pasajeros', vuelo.id]">{{"INICIO.DETALLE" | translate}}</button>
           </td>     
         </tr>
       </tbody>

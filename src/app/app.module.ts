@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { PasajeroFormComponent } from './components/pasajero-form/pasajero-form.component';
-import { PasajeroListComponent } from './components/pasajero-list/pasajero-list.component';
+import { PasajeroListComponent, PasajeroFilter } from './components/pasajero-list/pasajero-list.component';
 import { VueloListComponent } from './components/vuelo-list/vuelo-list.component';
 import { VueloFormComponent } from './components/vuelo-form/vuelo-form.component';
 
@@ -27,20 +27,21 @@ import { PasajerosService } from './services/pasajeros.service';
     PasajeroFormComponent,
     PasajeroListComponent,
     VueloListComponent,
-    VueloFormComponent
+    VueloFormComponent,
+    PasajeroFilter
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   providers: [
     VuelosService,

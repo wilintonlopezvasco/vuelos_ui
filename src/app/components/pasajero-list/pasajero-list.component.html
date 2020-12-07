@@ -1,9 +1,14 @@
 <section>
+    <app-pasajero-form></app-pasajero-form>
+</section>
+
+
+<section>
+
     <div class="container">
         <table class="table table-bordered table-dark">
             <thead>
                 <tr>
-                    <th scope="col">{{ "INICIO.IDPASAJERO" | translate}}</th>
                     <th scope="col">{{ "INICIO.IDVUELO" | translate}}</th>
                     <th scope="col">{{ "INICIO.NOMBRES" | translate}}</th>
                     <th scope="col">{{ "INICIO.APELLIDOS" | translate}}</th>
@@ -15,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let pasajero of pasajeros">
+                <tr *ngFor="let pasajero of pasajeros | pasajeroFilter:idVuelo:'idVuelo'">
                     <td>{{pasajero.idVuelo}}</td>
                     <td>{{pasajero.nombres}}</td>
                     <td>{{pasajero.apellidos}}</td>
@@ -25,15 +30,13 @@
                     <td>{{pasajero.celular}}</td>
                     <td>{{pasajero.email}}</td>
                     <td>
-                        <button [routerLink]="['/pasajeros/edit, pasajero.id']"
+                        <button [routerLink]="['/pasajeros/edit', pasajero.id]"
                             class="btn btn-info btn-block">{{"INICIO.EDITAR" | translate}}</button>
                     </td>
                     <td>
-                        <button class="btn btn-danger" (click)="deletePasajero(pasajero.id)">{{"INICIO.ELIMINAR" | translate}}</button>
+                        <button class="btn btn-danger"
+                            (click)="deletePasajero(pasajero.id)">{{"INICIO.ELIMINAR" | translate}}</button>
                     </td>
         </table>
     </div>
-</section>
-<section>
-    <app-pasajero-form></app-pasajero-form>
 </section>
